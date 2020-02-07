@@ -42,9 +42,25 @@ Complex complex_mult(Complex c1, Complex c2) {
 }
 
 Complex complex_div(Complex c1, Complex c2) {
-	double denom = magnitude(c2)*magnitude(c2);
-	Complex c = complex_mult(c1, complex_conj(c2));
-	c.real /= denom;
-	c.imag /= denom;
-	return c;
+	if (magnitude(c2) != 0)
+	{
+		double denom = magnitude(c2)*magnitude(c2);
+		Complex c = complex_mult(c1, complex_conj(c2));
+		c.real /= denom;
+		c.imag /= denom;
+		return c;
+	}
+	else printf("Can't not divide by 0 \n");
+}
+
+void handler1(Complex (*ptr)(Complex, Complex), Complex c1, Complex c2)
+{
+	Complex result = ptr(c1,c2);
+	print_complex(result);
+}
+
+void handler2(double (*ptr1)(Complex), Complex c1)
+{
+	double result = ptr1(c1);
+	printf("%.31f\n", result);
 }
