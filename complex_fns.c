@@ -62,5 +62,5 @@ void handler1(Complex (*ptr)(Complex, Complex), Complex c1, Complex c2)
 void handler2(double (*ptr1)(Complex), Complex c1)
 {
 	double result = ptr1(c1);
-	printf("%.31f\n", result);
+	printf("Result: %.31f\n", result);
 }
