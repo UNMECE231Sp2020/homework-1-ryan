@@ -18,3 +18,6 @@ Complex complex_conj(Complex c);
 
 double magnitude(Complex c);
 double phase(Complex c);
+
+void handler1(Complex (*ptr)(Complex, Complex), Complex c1, Complex c2);
+void handler2(double (*ptr1)(Complex), Complex c1);
